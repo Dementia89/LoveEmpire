@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/ButtonBG.png</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/ProgressBarBackground.png</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/ProgressBarColor.png</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/Font.spritefont</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/BigFont.spritefont</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/WorkButton.png</File>
+  </SourceFiles>
+</SourceFileCollection>
