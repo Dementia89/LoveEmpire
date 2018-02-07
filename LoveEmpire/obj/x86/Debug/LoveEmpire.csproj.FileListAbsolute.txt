@@ -22,9 +22,13 @@ D:\VS2017 Projects\LoveEmpire\LoveEmpire\obj\x86\Debug\LoveEmpire.csprojResolveA
 D:\VS2017 Projects\LoveEmpire\LoveEmpire\obj\x86\Debug\LoveEmpire.csproj.CoreCompileInputs.cache
 D:\VS2017 Projects\LoveEmpire\LoveEmpire\obj\x86\Debug\LoveEmpire.exe
 D:\VS2017 Projects\LoveEmpire\LoveEmpire\obj\x86\Debug\LoveEmpire.pdb
-D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\ButtonBG.xnb
-D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\ProgressBarBackground.xnb
-D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\ProgressBarColor.xnb
 D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\Font.xnb
 D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\BigFont.xnb
 D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\WorkButton.xnb
+D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\UpdatedButtonBG.xnb
+D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\UpdatedProgressBarBG.xnb
+D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\UpdatedProgressBarFG.xnb
+D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\shadedDark21.xnb
+D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\shadedDark34.xnb
+D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\shadedDark35.xnb
+D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\cursor.xnb

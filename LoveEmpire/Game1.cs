@@ -1,4 +1,11 @@
-﻿using Microsoft.Xna.Framework;
+﻿//***********************************************
+//  Script: Game1 (Love Empire)                 *
+//  Created By: Benjamin Holton                 *
+//  Created On: 05FEB2018                       *
+//  Copyright: Psychosis Entertainment (2018)   *
+//***********************************************
+
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
@@ -24,15 +31,27 @@ namespace LoveEmpire
 
         // My stuff
         Button[] buttons = new Button[NUMBER_OF_BUTTONS];
+        Button manualWorkButton;
+        Button exitButton;
+        Button saveButton;
+        Button resetButton;
+
+        // Using a button object for the cursor, never called
+        Button mouseCursorButton;
+
+        Texture2D mouseCursor;
         Texture2D buttonBGTex;
         Texture2D progBarBGTex;
         Texture2D progBarColorsTex;
         Texture2D workButtonTex;
-        Button manualWorkButton;
+        Texture2D exitBtnTex;
+        Texture2D saveBtnTex;
+        Texture2D resetBtnTex;
 
         string[] buttonNames = new string[NUMBER_OF_BUTTONS];
         int[] jobLevels = new int[NUMBER_OF_BUTTONS];
         JobLogic[] jobLogics = new JobLogic[NUMBER_OF_BUTTONS];
+
         int currencyOnHand = 0;
 
         // My own mouse state logic
@@ -60,8 +79,7 @@ namespace LoveEmpire
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-            this.IsMouseVisible = true;
+            this.IsMouseVisible = false;
 
             InitializeThemButtons();
 
@@ -82,19 +100,28 @@ namespace LoveEmpire
             font = Content.Load<SpriteFont>(@"font");
             bigFont = Content.Load<SpriteFont>(@"BigFont");
 
-            // TODO: use this.Content to load your game content here
-            buttonBGTex = Content.Load<Texture2D>(@"images/ButtonBG");
+            mouseCursor = Content.Load<Texture2D>(@"images/cursor");
+            mouseCursorButton.AssignTexture(mouseCursor);
+            
+            buttonBGTex = Content.Load<Texture2D>(@"images/UpdatedButtonBG");
             buttons[0].AssignTexture(buttonBGTex);
             buttons[1].AssignTexture(buttonBGTex);
             buttons[2].AssignTexture(buttonBGTex);
             buttons[3].AssignTexture(buttonBGTex);
 
-            progBarBGTex = Content.Load<Texture2D>(@"images/ProgressBarBackground");
-            progBarColorsTex = Content.Load<Texture2D>(@"images/ProgressBarColor");
+            progBarBGTex = Content.Load<Texture2D>(@"images/UpdatedProgressBarBG");
+            progBarColorsTex = Content.Load<Texture2D>(@"images/UpdatedProgressBarFG");
             progressBars[0].AssignTexture(progBarBGTex, progBarColorsTex);
             progressBars[1].AssignTexture(progBarBGTex, progBarColorsTex);
             progressBars[2].AssignTexture(progBarBGTex, progBarColorsTex);
             progressBars[3].AssignTexture(progBarBGTex, progBarColorsTex);
+
+            exitBtnTex = Content.Load<Texture2D>(@"images/shadedDark35");
+            exitButton.AssignTexture(exitBtnTex);
+            saveBtnTex = Content.Load<Texture2D>(@"images/shadedDark34");
+            saveButton.AssignTexture(saveBtnTex);
+            resetBtnTex = Content.Load<Texture2D>(@"images/shadedDark21");
+            resetButton.AssignTexture(resetBtnTex);
 
             workButtonTex = Content.Load<Texture2D>(@"images/WorkButton");
             manualWorkButton.AssignTexture(workButtonTex);
@@ -117,9 +144,10 @@ namespace LoveEmpire
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                SaveGame();
                 Exit();
-
-            // TODO: Add your update logic here
+            }
 
             // Update Buttons
             foreach (Button b in buttons)
@@ -157,7 +185,7 @@ namespace LoveEmpire
             // Check mouse state and then buttons
             if (ms == MouseStates.Down)
             {
-                // Cycle through all button objects.
+                // Cycle through job buttons.
                 for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
                 {
                     // Check if the mouse cursor is inside a button
@@ -176,11 +204,34 @@ namespace LoveEmpire
                     }
                 }
 
+                // Manual Work Button
                 if (manualWorkButton.Clicked(Mouse.GetState().Position.ToVector2()))
                 {
                     currencyOnHand += 1;
                 }
+
+                // Exit Button
+                if (exitButton.Clicked(Mouse.GetState().Position.ToVector2()))
+                {
+                    SaveGame();
+                    Exit();
+                }
+
+                // Save Game Button
+                if (saveButton.Clicked(Mouse.GetState().Position.ToVector2()))
+                {
+                    SaveGame();
+                }
+
+                // Reset Button
+                if (resetButton.Clicked(Mouse.GetState().Position.ToVector2()))
+                {
+                    ResetGame();
+                }
             }
+
+            // Keep mouse cursor at mouse location
+            mouseCursorButton.bounds.Location = Mouse.GetState().Position;
 
             // Method for looping JobLogics
             UpdateJobLogics();
@@ -217,8 +268,13 @@ namespace LoveEmpire
             }
 
             manualWorkButton.Draw(spriteBatch);
+            exitButton.Draw(spriteBatch);
+            saveButton.Draw(spriteBatch);
+            resetButton.Draw(spriteBatch);
 
             DrawStrings();
+
+            mouseCursorButton.Draw(spriteBatch);
 
             spriteBatch.End();
 
@@ -241,10 +297,10 @@ namespace LoveEmpire
 
             // Progress bars for buttons
             // X + 135 and Y + 85 For Progress Bars
-            progressBars[0] = new ProgressBar(0, 100, new Rectangle(235, 185, 250, 50), null, null);
-            progressBars[1] = new ProgressBar(0, 100, new Rectangle(235, 385, 250, 50), null, null);
-            progressBars[2] = new ProgressBar(0, 100, new Rectangle(735, 185, 250, 50), null, null);
-            progressBars[3] = new ProgressBar(0, 100, new Rectangle(735, 385, 250, 50), null, null);
+            progressBars[0] = new ProgressBar(0, 100, new Rectangle(250, 175, 250, 75), null, null);
+            progressBars[1] = new ProgressBar(0, 100, new Rectangle(250, 375, 250, 75), null, null);
+            progressBars[2] = new ProgressBar(0, 100, new Rectangle(750, 175, 250, 75), null, null);
+            progressBars[3] = new ProgressBar(0, 100, new Rectangle(750, 375, 250, 75), null, null);
 
             // Names for buttons
             buttonNames[0] = "Pass Love Notes";
@@ -259,10 +315,18 @@ namespace LoveEmpire
             jobLevels[3] = 0;
 
             // JobLogic initializers.
-            jobLogics[0] = new JobLogic(10f, 1.02f, 1, 0, 1, 0);
-            jobLogics[1] = new JobLogic(100f, 1.04f, 5, 0, 20, 0);
-            jobLogics[2] = new JobLogic(1000f, 1.1f, 10, 0, 400, 0);
-            jobLogics[3] = new JobLogic(10000f, 1.5f, 20, 0, 1000, 0);
+            jobLogics[0] = new JobLogic(10f, .02f, 1, 0, 1, 0);
+            jobLogics[1] = new JobLogic(100f, .04f, 5, 0, 20, 0);
+            jobLogics[2] = new JobLogic(1000f, .1f, 10, 0, 400, 0);
+            jobLogics[3] = new JobLogic(10000f, .5f, 20, 0, 1000, 0);
+
+            // other Buttons
+            exitButton = new Button(48, 48, 1232, 0);
+            saveButton = new Button(48, 48, 1184, 0);
+            resetButton = new Button(48, 48, 1232, 672);
+
+            // Mouse Cursor (not used as a button)
+            mouseCursorButton = new Button(31, 23, 0, 0);
         }
 
         // Redraws all strings. Called by Draw()
@@ -299,7 +363,8 @@ namespace LoveEmpire
                 buttons[3].bounds.Location.ToVector2() + new Vector2(20, 40), Color.Black);
 
             // Credits Info
-            spriteBatch.DrawString(font, "Game made by Benjamin Holton\nCopyright of Psychosis Entertainment and Benjamin Holton",
+            spriteBatch.DrawString(font, "Game made by Benjamin Holton\nVisual Assets" +
+                " Courtesy of Kenny.nl\nCopyright 2018 of Psychosis Entertainment and Benjamin Holton",
                 new Vector2(10, 10), Color.Red);
         }
 
@@ -324,6 +389,18 @@ namespace LoveEmpire
                 }
                 // NOTE: If the job level is 0, it does nothing.
             }
+        }
+
+        // TODO: Create Save Game Logic
+        void SaveGame()
+        {
+
+        }
+
+        // TODO: Create Reset Logic
+        void ResetGame()
+        {
+
         }
     }
 }

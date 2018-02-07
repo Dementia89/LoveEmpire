@@ -4,11 +4,15 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/ButtonBG.png</File>
-    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/ProgressBarBackground.png</File>
-    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/ProgressBarColor.png</File>
     <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/Font.spritefont</File>
     <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/BigFont.spritefont</File>
     <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/WorkButton.png</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/UpdatedButtonBG.png</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/UpdatedProgressBarBG.png</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/UpdatedProgressBarFG.png</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/shadedDark21.png</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/shadedDark34.png</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/shadedDark35.png</File>
+    <File>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/cursor.png</File>
   </SourceFiles>
 </SourceFileCollection>

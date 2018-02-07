@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/ButtonBG.png</SourceFile>
-  <SourceTime>2018-02-06T15:57:22.5883029-05:00</SourceTime>
-  <DestFile>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/bin/Windows/images/ButtonBG.xnb</DestFile>
-  <DestTime>2018-02-06T20:19:06.3759216-05:00</DestTime>
+  <SourceFile>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/shadedDark34.png</SourceFile>
+  <SourceTime>2018-02-07T13:51:59.7508234-05:00</SourceTime>
+  <DestFile>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/bin/Windows/images/shadedDark34.xnb</DestFile>
+  <DestTime>2018-02-07T15:34:07.2601935-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//***********************************************
+//  Script: Progressbar (Love Empire)           *
+//  Created By: Benjamin Holton                 *
+//  Created On: 05FEB2018                       *
+//  Copyright: Psychosis Entertainment (2018)   *
+//***********************************************
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace LoveEmpire
 {
@@ -40,7 +41,7 @@ namespace LoveEmpire
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, bounds, Color.White);
-            spriteBatch.Draw(barTexture, bar, bounds, Color.White);
+            spriteBatch.Draw(barTexture, bar, bounds, Color.Green);
         }
 
         /// <summary>

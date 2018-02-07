@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//***********************************************
+//  Script: JobLogic (Love Empire)              *
+//  Created By: Benjamin Holton                 *
+//  Created On: 05FEB2018                       *
+//  Copyright: Psychosis Entertainment (2018)   *
+//***********************************************
 
 namespace LoveEmpire
 {
@@ -54,11 +55,11 @@ namespace LoveEmpire
             currencyOnHand -= (int)costForLevel;
             if(jobLevel > 0)
             {
-                costForLevel *= costMultiplier * jobLevel;
+                costForLevel *= 1 + (costMultiplier * jobLevel);
             }
             else
             {
-                costForLevel *= costMultiplier;
+                costForLevel *= 1 + costMultiplier;
             }
             earnings += earningsPerLevel;
             jobLevel++;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/ProgressBarBackground.png</SourceFile>
-  <SourceTime>2018-02-06T15:59:46.7188439-05:00</SourceTime>
-  <DestFile>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/bin/Windows/images/ProgressBarBackground.xnb</DestFile>
-  <DestTime>2018-02-06T20:19:06.3969782-05:00</DestTime>
+  <SourceFile>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/images/UpdatedProgressBarBG.png</SourceFile>
+  <SourceTime>2018-02-07T14:55:57.5135786-05:00</SourceTime>
+  <DestFile>D:/VS2017 Projects/LoveEmpire/LoveEmpire/Content/bin/Windows/images/UpdatedProgressBarBG.xnb</DestFile>
+  <DestTime>2018-02-07T15:34:07.2316163-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
