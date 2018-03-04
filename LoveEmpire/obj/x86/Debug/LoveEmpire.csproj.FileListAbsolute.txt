@@ -32,3 +32,6 @@ D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\sh
 D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\shadedDark34.xnb
 D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\shadedDark35.xnb
 D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Content\images\cursor.xnb
+D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Newtonsoft.Json.dll
+D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Newtonsoft.Json.pdb
+D:\VS2017 Projects\LoveEmpire\LoveEmpire\bin\Windows\x86\Debug\Newtonsoft.Json.xml
